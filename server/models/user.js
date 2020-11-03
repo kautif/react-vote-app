@@ -19,7 +19,7 @@ const userSchema = new mongoose.Schema({
 
 // Occurs before saving to database
     // If arrow function is used, "this" refers to machine instead of userSchema
-userSchema.pre('save', async function (next) {
+userSchema.pre('save', async function (next ) {
     try {
         if (!this.isModified('password')) {
             return next();

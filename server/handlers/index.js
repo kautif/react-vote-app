@@ -11,5 +11,5 @@ module.exports.statusHandler = (req, res, next) => {
 }
 
 module.exports.errorHandler = (err, req, res, next) => {
-    res.status(err.status || 500).json({err: err.message || 'Server error'})
+    res.status(err.status || 400).json({err: err.message || 'Server error'})
 }
