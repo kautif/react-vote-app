@@ -8,6 +8,9 @@ exports.register = async (req, res, next) => {
         
         const token = jwt.sign({id, username}, process.env.SECRET);
 
+        // console.log("REGISTER id", id);
+        // console.log("REGISTER username", username);
+        // console.log("REGISTER token", token);
         res.status(201).json({id, username, token});
     } catch (err) {
         if (err.code === 11000) {
@@ -28,6 +31,9 @@ exports.login = async (req, res, next) => {
             res.json({
                 id, username, token
             });
+            // console.log("LOGIN id", id);
+            // console.log("LOGIN username", username);
+            // console.log("LOGIN token", token);
         } else {
             throw new Error();
         }

@@ -4,11 +4,12 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 
 const routes = require('./routes');
+const handler = require('./handlers');
+
 const app = express();
-const port = process.env.PORT;
+const port = process.env.PORT || 4000;
 
 const db = require('./models');
-const handler = require('./handlers');
 const router = require('./routes/auth');
 
 app.use(cors());
@@ -23,6 +24,7 @@ app.get('/', (req, res) => {
     res.json({greet: 'hello'});
 })
 app.use('/api/auth', routes.auth);
+app.use('/api/polls', routes.poll);
 
 app.use(handler.statusHandler);
 

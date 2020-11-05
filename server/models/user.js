@@ -14,7 +14,8 @@ const userSchema = new mongoose.Schema({
     created: {
         type: Date,
         default: Date.now
-    } 
+    },
+    polls: [{type: mongoose.Schema.Types.ObjectId, ref: 'Poll'}] 
 })
 
 // Occurs before saving to database

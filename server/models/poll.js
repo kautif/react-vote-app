@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
+const User = require('./user');
 
 const optionSchema = new mongoose.Schema({
-    options: String,
+    option: String,
     votes: {
         type: Number,
         default: 0
