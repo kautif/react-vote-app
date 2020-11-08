@@ -11,4 +11,12 @@ router
 .get(handler.showPolls)
 .post(auth, handler.createPoll);
 
+router.get('/user', auth, handler.userPolls);
+
+router
+.route('/:id')
+.get()
+.post()
+.delete();
+
 module.exports = router;
